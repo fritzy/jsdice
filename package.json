@@ -1,0 +1,28 @@
+{
+  "name": "jsdice",
+  "version": "1.0.0",
+  "description": "A simple d20 dice parser and roller based on http://jsdice.com",
+  "keywords": [
+    "dice",
+    "die",
+    "d20"
+  ],
+  "homepage": "github.com/fritzy/jsdice",
+  "author": {
+    "name": "Nathan Fritz",
+    "email": "nathan@andyet.net",
+    "url": "http://andyet.net/team/nathan"
+  },
+  "contributors": [],
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/fritzy/jsdice.git"
+  },
+  "dependencies": {
+  }
+}
