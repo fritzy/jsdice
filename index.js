@@ -1,13 +1,24 @@
-var Dice = function(phrase) {
+
+function stringSupplant (string, obj) {
+    return String.prototype.replace.call(string, /{([^{}]*)}/g, function (a, b) {
+        var r = obj[b];
+        return typeof r === 'string' || typeof r === 'number' ? r : a;
+    });
+}
+
+var Dice = function(phrase, stats) {
     this.phrase = phrase;
     this.dice = [];
     this.named_dice = [];
-    this.parse();
+    this.parse(stats);
 };
 
 (function () {
-    this.parse = function () {
+    this.parse = function (stats) {
         var dice = this.phrase;
+        if (typeof stats !== 'undefined') {
+            dice = stringSupplant(dice, stats);
+        }
         var dice = dice.replace(/- */,'+ -');
         var dice = dice.replace(/D/,'d');
         var re = / *\+ */;
